@@ -1,0 +1,215 @@
+/* Archivo: css/style.css */
+
+/* --- Variables y Estilos Globales --- */
+:root {
+    --color-primario: #0056b3; /* Azul oscuro */
+    --color-secundario: #007bff; /* Azul más claro */
+    --color-fondo: #f8f9fa;
+    --color-texto: #333;
+    --color-blanco: #fff;
+    --color-gris-claro: #e9ecef;
+    --color-error: #dc3545;
+    --sombra-caja: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* --- Cabecera y Navegación --- */
+header {
+    background-color: var(--color-blanco);
+    padding: 15px 30px;
+    box-shadow: var(--sombra-caja);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--color-primario);
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--color-primario);
+}
+
+/* --- Formularios de Login --- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-box {
+    background: var(--color-blanco);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-caja);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h1 {
+    margin-bottom: 25px;
+    color: var(--color-primario);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.btn {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-primario);
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: var(--color-error);
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- Catálogo de Libros --- */
+.catalogo h2 {
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.categoria-libros {
+    margin-bottom: 30px;
+}
+
+.libros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.libro-card {
+    background: var(--color-blanco);
+    border-radius: 8px;
+    box-shadow: var(--sombra-caja);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.libro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.libro-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.libro-card h4 {
+    margin: 10px 0 5px;
+    color: var(--color-primario);
+}
+
+.libro-card p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.libro-card .acciones a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.libro-card .acciones a:hover {
+    background-color: var(--color-primario);
+}
+
+/* --- Tablas (Panel de Admin) --- */
+.panel-admin table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.panel-admin th, .panel-admin td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.panel-admin th {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.panel-admin tr:nth-child(even) {
+    background-color: var(--color-gris-claro);
+}
+
+.panel-admin tr:hover {
+    background-color: #ddd;
+}
